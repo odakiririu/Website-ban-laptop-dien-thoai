@@ -1,0 +1,97 @@
+﻿@model PagedList.IPagedList<Model.EF.User>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Xin chao";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin/LayoutHomeAdmin.cshtml";
+}
+@section Header{
+    <h3 style="color:red;">
+        Xin chào,
+        @{
+            var session = (ShopNAD.Areas.Admin.Models.AdminModel)Session[ShopNAD.Common.ConstSession.SessionUser];
+            if (session != null)
+            {
+                @session.UserName;
+            }
+        }
+    </h3>
+
+}
+@section jsFooter{
+    <script src="/Areas/Admin/JS/userManage.js"></script>
+}
+<h3>Danh sách tài khoản thành viên </h3>
+
+@using (Html.BeginForm("Index", "UserManage", FormMethod.Get))
+{
+    <div class="form-group input-group col-lg-6">
+        <input type="text" class="form-control" placeholder="tên tài khoản..." value="@ViewBag.keySearch" name="keySearch">
+        <span class="input-group-btn">
+            <button class="btn btn-info" type="submit">
+                Tìm kiếm
+            </button>
+        </span>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên tài khoản</th>
+                                <th>Họ và tên</th>
+                                <th>Địa chỉ</th>
+                                <th>Số điện thoại</th>
+                                <th>Email</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        #
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn-active" data-id="@item.ID">@(item.Status ? "Hoạt động" : "Bị khóa")</a>
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Xóa", "DeleteUser", new { id = item.ID })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>

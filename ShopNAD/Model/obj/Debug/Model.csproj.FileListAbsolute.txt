@@ -1,0 +1,58 @@
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\Model.dll.config
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\Model.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\Model.pdb
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\EntityFramework.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\EntityFramework.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Web bán điện thoại\ShopNAD\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Web bán điện thoại\ShopNAD\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Web bán điện thoại\ShopNAD\Model\obj\Debug\Model.dll
+D:\Web bán điện thoại\ShopNAD\Model\obj\Debug\Model.pdb
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\PagedList.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\PagedList.Mvc.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\PagedList.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\PagedList.Mvc.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Helpers.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Mvc.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Razor.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Helpers.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Mvc.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.Razor.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Web bán điện thoại\ShopNAD\Model\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Web bán điện thoại\ShopNAD\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Shop\ShopNAD\Model\bin\Debug\Model.dll.config
+D:\Shop\ShopNAD\Model\bin\Debug\Model.dll
+D:\Shop\ShopNAD\Model\bin\Debug\Model.pdb
+D:\Shop\ShopNAD\Model\bin\Debug\EntityFramework.dll
+D:\Shop\ShopNAD\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Shop\ShopNAD\Model\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Shop\ShopNAD\Model\bin\Debug\PagedList.dll
+D:\Shop\ShopNAD\Model\bin\Debug\PagedList.Mvc.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Helpers.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Mvc.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Razor.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.dll
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Shop\ShopNAD\Model\bin\Debug\EntityFramework.xml
+D:\Shop\ShopNAD\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Shop\ShopNAD\Model\bin\Debug\PagedList.xml
+D:\Shop\ShopNAD\Model\bin\Debug\PagedList.Mvc.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Helpers.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Mvc.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.Razor.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Shop\ShopNAD\Model\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Shop\ShopNAD\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Shop\ShopNAD\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Shop\ShopNAD\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Shop\ShopNAD\Model\obj\Debug\Model.dll
+D:\Shop\ShopNAD\Model\obj\Debug\Model.pdb

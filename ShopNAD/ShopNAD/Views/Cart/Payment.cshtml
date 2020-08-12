@@ -1,0 +1,70 @@
+﻿@model List<ShopNAD.Models.CartItem>
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="/Assets/Client/css/tableCart.css" rel="stylesheet" type="text/css" />
+<link href="/Assets/Admin/css/bootstrap.min.css" rel="stylesheet" />
+@section jsFooter{
+    <script src="/Assets/Client/js/Controller/CartController.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+}
+<div class="main">
+    <div class="content">
+        <div class="section group">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Mã sản phẩm</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Số lượng</td>
+                        <td>Hình ảnh</td>
+                        <td>Đơn giá</td>
+                        <td>Thành tiền</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Product.IDProduct</td>
+                            <td>@item.Product.NameProduct</td>
+                            <td><input type="text" class="txtquantity" value="@item.Quantity" data-id="@item.Product.IDProduct" /></td>
+                            <td><img src="@item.Product.Images" width="100" /></td>
+                            <td>@item.Product.Price.ToString("N0")</td>
+                            <td>@((item.Product.Price * item.Quantity).ToString("N0"))</td>
+                            <td><a href="#" class="btnDelete" data-id="@item.Product.IDProduct"><i>Xóa</i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="section group">
+            @using (Html.BeginForm("Payment", "Cart", FormMethod.Post))
+            {
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Người nhận</label>
+                    <input type="text" name="txtShipName" value="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Điện thoại</label>
+                    <input type="text" name="txtPhone" value="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" name="txtAddress" value="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ Email</label>
+                    <input type="text" name="txtEmail" value="" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-facebook">Thanh toán</button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

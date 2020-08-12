@@ -1,0 +1,6 @@
+D:\Web bán điện thoại\ShopNAD\Common\bin\Debug\Common.dll
+D:\Web bán điện thoại\ShopNAD\Common\bin\Debug\Common.pdb
+D:\Web bán điện thoại\ShopNAD\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\Web bán điện thoại\ShopNAD\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Web bán điện thoại\ShopNAD\Common\obj\Debug\Common.dll
+D:\Web bán điện thoại\ShopNAD\Common\obj\Debug\Common.pdb

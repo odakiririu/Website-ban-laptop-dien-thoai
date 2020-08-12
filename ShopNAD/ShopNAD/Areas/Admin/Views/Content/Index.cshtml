@@ -1,0 +1,122 @@
+﻿@model IEnumerable<Model.EF.Content>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin/LayoutHomeAdmin.cshtml";
+}
+
+@section Header{
+    <h3 style="color:red;">
+        Xin chào,
+        @{
+            var session = (ShopNAD.Areas.Admin.Models.AdminModel)Session[ShopNAD.Common.ConstSession.SessionUser];
+            if (session != null)
+            {
+                @session.UserName;
+            }
+        }
+    </h3>
+}
+<h3>Danh sách tài khoản người quản trị </h3>
+<p>
+    @Html.ActionLink("Tạo mới bài viết", "Create", "", new { @class = "btn btn-danger" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentCategory.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desciption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaKeywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescriptions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TopHot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tags)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row_@item.IDContent">
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentCategory.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desciption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaKeywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDescriptions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopHot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDContent }) |
+                @Ajax.ActionLink("Xóa", "Delete", new { id = item.IDContent }, new AjaxOptions
+           {
+               Confirm ="Bạn muốn xóa bài viết này ?",
+               OnComplete = "$('#row_"+item.IDContent+"').remove()",
+               HttpMethod ="Delete"
+           })
+            </td>
+        </tr>
+    }
+
+</table>

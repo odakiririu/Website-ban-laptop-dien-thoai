@@ -1,0 +1,57 @@
+﻿
+    <div class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search">
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <!-- /input-group -->
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","HomeAdmin")"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","AdminManage")"><i class="glyphicon glyphicon-user"></i> Tài khoản quản trị</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","UserManage")"><i class="glyphicon glyphicon-user"></i> Tài khoản người dùng</a>
+                </li>
+                <li>
+                    <a href="#"><i class="glyphicon glyphicon-th-large"></i> Quản lý sản phẩm<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="@Url.Action("Index","ProductCategoryManage")">Thể loại sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","ProductManage")">Danh sách sản phẩm</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Content")"><i class="glyphicon glyphicon-pencil"></i> Tin tức</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Quản lí chung<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="blank.html">About</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Footer</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
+            <!-- /#side-menu -->
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>

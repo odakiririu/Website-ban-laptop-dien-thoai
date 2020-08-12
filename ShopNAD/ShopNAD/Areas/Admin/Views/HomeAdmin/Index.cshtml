@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin/LayoutHomeAdmin.cshtml";
+}
+
+
+@section Header{
+    <h3 style="color:red;">
+        Xin chào,
+        @{
+            var session = (ShopNAD.Areas.Admin.Models.AdminModel)Session[ShopNAD.Common.ConstSession.SessionUser];
+            if (session != null)
+            {
+                @session.UserName;
+            }
+        }
+    </h3>
+}
+
+

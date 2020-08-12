@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Model.EF.ProductCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin/LayoutHomeAdmin.cshtml";
+}
+
+@section Header{
+    <h3 style="color:red;">
+        Xin chào,
+        @{
+            var session = (ShopNAD.Areas.Admin.Models.AdminModel)Session[ShopNAD.Common.ConstSession.SessionUser];
+            if (session != null)
+            {
+                @session.UserName;
+            }
+        }
+    </h3>
+}
+
+<p>
+    @Html.ActionLink("Tạo mới đề mục", "Create","", new { @class = "btn btn-danger" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên đề mục
+        </th>
+        <th>
+            Thứ tự hiển thị
+        </th>
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            Hiện lên trang chủ
+        </th>
+        <th>
+            Tiêu đề link
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row_@item.IDProductCategory">
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProductCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowOnHome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDProductCategory }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IDProductCategory },new AjaxOptions { 
+                    Confirm="Bạn muốn xóa?",
+                    OnComplete="$('#row_"+@item.IDProductCategory+"').remove()",
+                    HttpMethod="Delete"
+           })
+            </td>
+        </tr>
+    }
+
+</table>

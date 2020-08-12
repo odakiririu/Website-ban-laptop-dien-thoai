@@ -1,0 +1,118 @@
+﻿@model PagedList.IPagedList<Model.EF.Product>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin/LayoutHomeAdmin.cshtml";
+}
+
+@section Header{
+    <h3 style="color:red;">
+        Xin chào,
+        @{
+            var session = (ShopNAD.Areas.Admin.Models.AdminModel)Session[ShopNAD.Common.ConstSession.SessionUser];
+            if (session != null)
+            {
+                @session.UserName;
+            }
+        }
+    </h3>
+}
+@using (Html.BeginForm("Index", "ProductManage", FormMethod.Get))
+{
+    <div class="form-group input-group col-lg-6">
+        <input type="text" class="form-control" placeholder="tên sản phẩm..." value="@ViewBag.keySearch" name="keySearch">
+        <span class="input-group-btn">
+            <button class="btn btn-info" type="submit">
+                Tìm kiếm
+            </button>
+        </span>
+    </div>
+}
+<p>
+    @Html.ActionLink("Thêm sản phẩm mới", "Create", "", new { @class = "btn btn-danger" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Đề mục
+        </th>
+        <th>
+            Mã SP
+        </th>
+        <th>
+            Tên SP
+        </th>
+        <th>
+            Tiêu đề
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Link ảnh
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Bảo hành
+        </th>
+        <th>
+            Trạng thái
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr id="row_@item.IDProduct">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategory.NameProductCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desciption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Images)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Warranty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.IDProduct }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDProduct }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IDProduct }, new AjaxOptions
+                {
+               Confirm = "Bạn có muốn xóa ?",
+               OnComplete = "$('#row_" + @item.IDProduct + "').remove()",
+               HttpMethod = "Delete"
+           })
+            </td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
